@@ -1,5 +1,79 @@
+
+
+
+
+
+
+
+
+
+ 
+  <div class="container">
+  <form>
+  <div class="form-group">
+  <label for="userName">User Name</label>
+  <input type="text" name="userName" [(ngModel)]="userName" class="form-control" id="userName" required>
+  <!-- <input type="text" name="userName" #ctrl="ngModel" required> -->
+  </div>
+  <div class="form-group">
+  <label for="Password">Password</label>
+  <input type="password" class="form-control" id="Password">
+  </div>
+  <button (click)="submit()">Login</button>
+  </form>
+  </div>
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- Modal -->
-<div class="modal fade bs-modal-sm log-sign" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"
+<!-- <div class="modal fade bs-modal-sm log-sign" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true"
  data-target=".log-sign">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
@@ -7,7 +81,7 @@
         <div class="bs-example bs-example-tabs">
             <ul id="myTab" class="nav nav-tabs">
               <li id="tab1" class=" active tab-style login-shadow "><a href="#signin" data-toggle="tab">Log In</a></li>
-              <li id="tab2" class=" tab-style "><a href="#signup" data-toggle="tab">Sign Up</a></li>
+              <li id="tab2" class=" tab-style "><a href="#signup" data-toggle="tab" >Sign Up</a></li>
               
             </ul>
         </div>
@@ -16,17 +90,17 @@
        
         <div class="tab-pane fade active in" id="signin">
             <form class="form-horizontal">
-            <fieldset>
+            <fieldset> -->
             <!-- Sign In Form -->
             <!-- Text input-->
               
-               <div class="group">
+               <!-- <div class="group">
 <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
-    <label class="label" for="date">Email address</label></div>
+    <label class="label" for="date">Email address</label></div> -->
               
               
             <!-- Password input-->
-            <div class="group">
+            <!-- <div class="group">
 <input required="" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
     <label class="label" for="date">Password</label>
     </div>
@@ -34,11 +108,11 @@
 
            <div class="forgot-link">
             <a href="#forgot" data-toggle="modal" data-target="#forgot-password"> I forgot my password</a>
-            </div>
+            </div> -->
             
 
             <!-- Button -->
-            <div class="control-group">
+            <!-- <div class="control-group">
               <label class="control-label" for="signin"></label>
               <div class="controls">
                 <button id="signin" name="signin" class="btn btn-primary btn-block">Log In</button>
@@ -50,35 +124,35 @@
           
         <div class="tab-pane fade" id="signup">
             <form class="form-horizontal">
-            <fieldset>
+            <fieldset> -->
             <!-- Sign Up Form -->
             <!-- Text input-->
-            <div class="group">
+            <!-- <div class="group">
 <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
-    <label class="label" for="date">First Name</label></div>
+    <label class="label" for="date">First Name</label></div> -->
             
             <!-- Text input-->
-            <div class="group">
+            <!-- <div class="group">
 <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
     <label class="label" for="date">Last Name</label></div>
-            
+             -->
             <!-- Password input-->
-            <div class="group">
+            <!-- <div class="group">
 <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
-    <label class="label" for="date">Email</label></div>
+    <label class="label" for="date">Email</label></div> -->
             
             <!-- Text input-->
-            <div class="group">
+            <!-- <div class="group">
 <input required="" class="input" type="password"><span class="highlight"></span><span class="bar"></span>
     <label class="label" for="date">Password</label></div>
               <em>1-8 Characters</em>
             
               <div class="group2">
 <input required="" class="input" type="text"><span class="highlight"></span><span class="bar"></span>
-    <label class="label" for="date">Country</label></div>
+    <label class="label" for="date">Country</label></div> -->
             
             <!-- Button -->
-            <div class="control-group">
+            <!-- <div class="control-group">
               <label class="control-label" for="confirmsignup"></label>
               <div class="controls">
                 <button id="confirmsignup" name="confirmsignup" class="btn btn-primary btn-block">Sign Up</button>
@@ -92,11 +166,11 @@
     
     </div>
   </div>
-</div>
+</div> -->
 
 <!--modal2-->
 
-<div class="modal fade bs-modal-sm" id="forgot-password" tabindex="0" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+<!-- <div class="modal fade bs-modal-sm" id="forgot-password" tabindex="0" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
         <div class="modal-header">
@@ -125,4 +199,4 @@
     
   </div>
 </div>
-
+ -->

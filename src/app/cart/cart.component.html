@@ -6,7 +6,7 @@
             <table class="table table-responsive">
                 <thead>
                     <tr>
-                        <th> sr.No</th>
+                        <th> Sno</th>
                         <th>Dish Name</th>
                         <th>Dish Image</th>
                         <th>Price</th>
@@ -21,16 +21,27 @@
                         <td>{{i+1}}</td>
                         <td>{{dt.name}}</td>
                         <td><img style="width: 110px;" src="{{dt.image_url}}"></td>
-                        <td>{{dt.price}}</td>
-                        <button type="button" (click)="minus()"><i class="fa fa-minus"></i></button>
-                        <input type="text" [value]="quantity">
-                        <button type="button" (click)="plus()"><i class="fa fa-plus"></i></button>
-                        <td>{{dt.Quantity}}</td>
+                        <td>{{dt.price | currency :'INR'}}</td>
+                        <div class="qantity-container">
+                            <div class="quantity-button">
 
-                        <td>{{dt.Total}}</td>
+                               
+                                <button class="btn" id="plus" type="button" (click)="inc( dt)"><i class="fa fa-plus"></i></button>
+                                <span>{{dt.quantity}}</span>
+                                <button class="btn" id="minus" type="button" (click)="dec(dt)"><i class="fa fa-minus"></i></button>
+                            
+
+                             </div>
+                            </div>
+                        
+                        
+                       
+                        <!-- <td>{{dt.Quantity}}</td> -->
+
+                        <td>{{dt.price*dt.quantity | currency :'INR'}}</td>
                         <td>
                             <!-- <button (click)="removeItem(dt)" class="btn btn-danger"><span class='bi bi-trash' style='color: red'></span></button> -->
-                            <button style="width: 10px;" (click)="removeItem(dt); calculatePrice();" class="btn btn-danger delete-cart-item"><span class="fa fa-trash"></span></button>
+                            <button style="width: 40px;" (click)="removeItem(dt); calculatePrice();" class="btn btn-danger delete-cart-item"><span class="fa fa-trash"></span></button>
                         </td>
                     
                     </tr>
@@ -38,8 +49,9 @@
                         <td colspan="4"></td>
                         <td><button (click)="emptycart()" class="btn.btn-danger">Empty cart</button></td>
                         <td><button routerLink="/famous-dishes" class="btn.btn-primary">shop more</button></td>
-                        <td><button class="btn.btn-success">checkout</button></td>
-                        <td><strong>Grand Total:{{grandTotal}}</strong></td>
+                        <!-- <td><button class="btn.btn-success" routerLink="/checkout">checkout</button></td> -->
+                        <td><button class="btn.btn-success" routerLink="/orderdetails">checkout</button></td>
+                        <td><strong>Grand Total:{{calcGrandTotal() | currency :'INR'}}</strong></td>
                     </tr>
                 </tbody>
             </table>

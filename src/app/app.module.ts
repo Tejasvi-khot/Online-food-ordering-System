@@ -8,16 +8,26 @@ import { SignupComponent } from './signup/signup.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
-import { FamousDishesComponent } from './famous-dishes/famous-dishes.component';
+
 import { FilterPipe } from './shared/filter.pipe';
-import { NonvegComponent } from './nonveg/nonveg.component';
+
 import { HeaderComponent } from './header/header.component';
 import { SouthindianComponent } from './southindian/southindian.component';
 import { VegComponent } from './veg/veg.component';
 import { Nonveg1Component } from './nonveg1/nonveg1.component';
 import { CartComponent } from './cart/cart.component';
-import { NgifTestComponent } from './ngif-test/ngif-test.component';
+
 import { CommonModule } from '@angular/common';
+import { CheckoutComponent } from './checkout/checkout.component';
+
+import { AdminDashbordComponent } from './admin-dashbord/admin-dashbord.component';
+import { FamousdishListComponent } from './famousdish-list/famousdish-list.component';
+import { DishService } from './dish.service';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+import { from } from 'rxjs';
+import { DishpageComponent } from './dishpage/dishpage.component';
+import { OrderdetailsComponent } from './orderdetails/orderdetails.component';
+
 
 
 
@@ -29,24 +39,35 @@ import { CommonModule } from '@angular/common';
     AboutComponent,
     ContactComponent,
     FooterComponent,
-    FamousDishesComponent,
+   
     FilterPipe,
-    NonvegComponent,
+    
     HeaderComponent,
     SouthindianComponent,
     VegComponent,
     Nonveg1Component,
     CartComponent,
-    NgifTestComponent
+   
+    CheckoutComponent,
+   
+    AdminDashbordComponent,
+         FamousdishListComponent,
+         DishpageComponent,
+         OrderdetailsComponent,
+         
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    CommonModule 
+    CommonModule ,
+    FormsModule,
+    ReactiveFormsModule
+    
+
   ],
-  providers: [],
+  providers: [DishService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

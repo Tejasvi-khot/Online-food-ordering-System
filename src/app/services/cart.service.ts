@@ -1,9 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { IProduct } from '../IProduct';
-// import { Cart } from '../shared/models/Cart';
-// import { cartItem } from '../shared/models/cartItem';
-// import { Foods } from '../shared/models/food';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +11,9 @@ export class CartService {
   public cartItemList:IProduct[]=[]
   public famousdishList= new BehaviorSubject<any>([]);
 
-  constructor() {}
+  public search = new BehaviorSubject<string>("");
+
+  constructor(private httpClient: HttpClient) {}
   getdish(){
  return this.famousdishList.asObservable();
   }
@@ -27,17 +28,17 @@ export class CartService {
      {
        this.cartItemList.push(famousdish);
        this.famousdishList.next(this.cartItemList);
-       this.getTotalPrice();
+       //this.getTotalPrice();
        console.log(this.cartItemList);
-     }
-     getTotalPrice() : number{
-       let grandTotal =0;
-       this.cartItemList.map((a:any)=>{
-         grandTotal += a.total;
+//post
+ this.httpClient.post<any>('https://reqres.in/api/addItems', { title: 'Angular POST Request Example' }).subscribe(data => {
+        //this.postId = data.id;
 
-       })
-       return grandTotal;
+     });
+     //this.httpClient.post<any>('https://reqres.in/api/addItems'
+
      }
+    
      removecartItem(famousdish:any){
        this.cartItemList.map((a:any,index:any)=>{
          if(famousdish.id=== a.id){
@@ -53,30 +54,14 @@ export class CartService {
 
      }
      
-  //private cart:Cart =new Cart();
-  // addTocart(food:Foods) :void{
-  //   let Cartitem = this.cart.items.find(item => item.food.id===food.id)
-  //   if(Cartitem){
-  //     this.changeQuantity(food.id,cartItem.quantity +1)
-  //     return;
-  //   }
-  //   this.cart.items.push(new cartItem(food));
-      
-  //     }
-    
-  //     removeFromcart(foodId:number):void{
-  //       this.cart.items
-  //     = this.cart.items.filter(item => item.food.id !=foodId)
-    
-  //     }
-    
-  //     changeQuantity(quantity:number,foodId:number){
-  //       let cartItems= this.cart.items.find(item => item.food.id === foodId)
-  //       if(!cartItem)return;
-  //       cartItem.quantity = quantity;
-  //     }
-    
-  //     getcart
+     getTotalPrice() : number{
+      let grandTotal =0;
+      this.cartItemList.map((a:any)=>{
+        grandTotal += Number(a.total);
+      })
+      return grandTotal;
+    }
+     
      }
   
 

@@ -1,0 +1,14 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "conn",
+            "database": "Foods",
+            "username": "postgres",
+            "password": "root"
+        }
+    ]
+}

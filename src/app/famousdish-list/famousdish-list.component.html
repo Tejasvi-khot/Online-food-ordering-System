@@ -1,0 +1,25 @@
+<p>famousdish-list works!</p>
+
+
+<div class="container" mt-4 mb-4>
+    <h1 class="text-center">Famous<span class="">Dishes</span></h1>
+    <!--{{result.length}}-->
+    
+    <div class="row">
+      <ng-container  *ngFor="let dt of famous | filter:searchKey:'name'" >
+        <div class="card col-md-3" id="cardcontainer"> 
+          <img src="{{dt.image_url}}">
+    
+          <p><strong>{{dt.name}}</strong></p>
+    
+          <p><b>₹{{dt.price}}</b></p>
+    
+          <button class="btn btn-warning"(click)=addtocart(dt) >Add to cart</button>
+             
+            </div>
+      </ng-container>
+    
+    </div>
+    </div>
+
+

@@ -1,0 +1,39 @@
+<p>orderdetails works!</p>
+
+<div class="col-25">
+    <div class="container">
+      <h4>Your Order <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <span>{{totalItem}}</span></span></h4>
+  
+      <ng-container  *ngFor="let dt of famous; let i =index">
+        <div class="card-image">
+        <p><img style="width: 100px; width: 100%;
+            object-fit: fill;
+            border-radius: 10px;" src="{{dt.image_url}}"></p>
+           
+            </div>
+            <div class="card-details">
+              <p><span class="cartid"><strong>{{i+1}}</strong> </span></p>
+                <p><span class="card-name"><strong>{{dt.name}}</strong> </span></p>
+            <p><span class="card-price"><strong>{{dt.price*dt.quantity | currency :'INR'}}</strong></span></p>
+       </div>
+        <div class="qantity-container">
+                            <div class="card-wheel">
+
+                               
+                                <button class="btn" id="plus" type="button" (click)="inc( dt)"><i class="fa fa-plus"></i></button>
+                                <span>{{dt.quantity}}</span>
+                                <button class="btn" id="minus" type="button" (click)="dec(dt)"><i class="fa fa-minus"></i></button>
+                            
+
+                             </div>
+                            </div>
+                       
+    </ng-container>
+         
+          <hr>
+          <p>Total <span class="price" style="color:black"><b><strong>{{calcGrandTotal() | currency :'INR'}}</strong></b></span></p>
+          <input type="submit" (click)="save()" value="Place Order" class="btn">       
+    </div>
+  </div>
+
+

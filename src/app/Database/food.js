@@ -27,11 +27,15 @@ db.connect(err => {
 
 app.get('/food', (req, res) => {
     let qr = 'select * from "food1"'
+   
     db
         .query({
             //rowMode: "array",
             text: qr
+        
         })
+
+       
 
         .then(result => {
             //console.log(result); 
@@ -49,6 +53,8 @@ app.get('/food', (req, res) => {
             res.send(data1);
             //res.send(result.rows);
             //}
+
+           
         })
         .catch(err => console.log(err, 'errs'));
 });

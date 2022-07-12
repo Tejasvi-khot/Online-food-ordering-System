@@ -2,6 +2,7 @@ import { Component, OnInit,EventEmitter, Output  } from '@angular/core';
 import { FoodService } from '../services/food/food.service';
 import { Foods } from '../shared/models/food';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CartService } from '../services/cart.service';
 //import { EventEmitter } from 'stream';
 
 @Component({
@@ -11,8 +12,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 foods:Foods[]=[];
-   //searchItem:string = '';
-   constructor(private fs:FoodService,private route:ActivatedRoute) { }
+
+public searchTerm:string='';
+
+
+  
+   constructor(private fs:FoodService,private route:ActivatedRoute,private cartService:CartService) { }
 
    ngOnInit(): void {
  this.route.params.subscribe(params =>{
@@ -24,13 +29,18 @@ foods:Foods[]=[];
    this.foods = this.fs.getAll();
  })
 }
+
+
+ search(event:any){
+    this.searchTerm=(event.target as HTMLInputElement).value;
+    this.cartService.search.next(this.searchTerm);
+    console.log(this.searchTerm);
+  }
+
+
+
    }
-  //<!---newsearchcode-->
-//   enteredSerchValue: string ='';
-//   @Output()
-//   searchTextChanged: EventEmitter<string> =  new EventEmitter<string>();
-// onsearchTextChanged(){
-//   this.searchTextChanged.emit(this.enteredSerchValue);
+
 
   
 

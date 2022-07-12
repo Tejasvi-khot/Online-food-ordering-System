@@ -16,5 +16,9 @@ public totalItem :number=0;
 this.totalItem = res.length;
     })
   }
+  userName = "";
+ onLogin(user: string) {
+ this.userName =user;
+ }
 
 }
